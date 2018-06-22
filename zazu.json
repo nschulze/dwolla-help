@@ -1,0 +1,44 @@
+{
+  "name": "dwolla-help",
+  "version": "1.0.41",
+  "description": "Dwolla dev help",
+  "blocks": {
+    "input": [
+      {
+        "id": "template",
+        "type": "Keyword",
+        "keyword": "template",
+        "title": "Dwolla Help",
+        "subtitle": "Dwolla Help",
+        "icon": "fa-files-o",
+        "connections": [
+          "Copy"
+        ]
+      },
+      {
+        "id": "help",
+        "type": "PrefixScript",
+        "prefix": "help",
+        "space": false,
+        "script": "src/topics.js",
+        "connections": ["Copy"]
+      },
+      {
+        "id": "help-topic",
+        "type": "PrefixScript",
+        "prefix": "help",
+        "space": true,
+        "args": "Required",
+        "script": "src/help.js",
+        "connections": ["Copy"]
+      }
+    ],
+    "output": [
+      {
+        "id": "Copy",
+        "type": "CopyToClipboard",
+        "text": "{value}"
+      }
+    ]
+  }
+}
